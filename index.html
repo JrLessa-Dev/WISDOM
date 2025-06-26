@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wisdom AI - Inteligência Artificial para decisões conscientes e estratégicas.">
+    <title>Wisdom AI - Inteligência Artificial para Decisões Conscientes</title>
+    <!-- Link para a biblioteca Font Awesome para ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Link para o arquivo de estilos CSS personalizado -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body data-theme="light">
+    <!-- Cabeçalho da página, fixo no topo -->
+    <header id="header">
+        <nav class="container">
+            <!-- Logo da Wisdom AI, com ícone e texto -->
+            <a href="#home" class="logo">
+                <i class="fas fa-brain"></i>
+                WISDOM AI
+            </a>
+            <!-- Botão para alternar entre tema claro e escuro -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
+                <i class="fas fa-adjust"></i>
+            </button>
+            <!-- Botão de menu para dispositivos móveis (hambúrguer) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Links de navegação principais -->
+            <ul class="nav-links" id="navLinks" role="navigation">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#ai">IA Demo</a></li>
+                <li><a href="#packages">Soluções</a></li>
+                <li><a href="#contact" class="cta">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção Hero: Introdução principal da página -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>WISDOM AI</h1>
+                <p class="subtitle">A Tecnologia que Transforma Decisões</p>
+                <p class="description">
+                    Desenvolvemos uma IA avançada que estimula pensamento crítico, ético e estratégico,
+                    empoderando líderes industriais a tomar decisões conscientes e inovadoras.
+                </p>
+                <div class="hero-buttons">
+                    <!-- Botão primário para experimentar a IA -->
+                    <a href="#ai" class="btn btn-primary">
+                        <i class="fas fa-robot"></i>
+                        Experimente Agora
+                    </a>
+                    <!-- Botão secundário para saber mais sobre a empresa -->
+                    <a href="#about" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Saiba Mais
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre: Detalhes sobre os benefícios da Wisdom AI -->
+        <section id="about" class="section section-white animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title">Por que Escolher a Wisdom?</h2>
+                <p class="section-subtitle">
+                    A Wisdom AI é uma parceira estratégica que eleva sua tomada de decisão com inteligência avançada
+                    e uma abordagem centrada em ética e inovação.
+                </p>
+                <div class="features-grid">
+                    <!-- Card de funcionalidade: Pensamento Crítico -->
+                    <div class="feature-card">
+                        <i class="fas fa-brain feature-icon"></i>
+                        <h3 class="feature-title">Pensamento Crítico</h3>
+                        <p class="feature-description">
+                            Questiona premissas, explora cenários e aprofunda sua análise com insights únicos.
+                        </p>
+                    </div>
+                    <!-- Card de funcionalidade: Ética Avançada -->
+                    <div class="feature-card">
+                        <i class="fas fa-balance-scale feature-icon"></i>
+                        <h3 class="feature-title">Ética Avançada</h3>
+                        <p class="feature-description">
+                            Simula perspectivas diversas para decisões equilibradas e responsáveis.
+                        </p>
+                    </div>
+                    <!-- Card de funcionalidade: Estratégia Proativa -->
+                    <div class="feature-card">
+                        <i class="fas fa-chess feature-icon"></i>
+                        <h3 class="feature-title">Estratégia Proativa</h3>
+                        <p class="feature-description">
+                            Antecipa riscos e otimiza planos com visão de longo prazo.
+                        </p>
+                    </div>
+                    <!-- Card de funcionalidade: Acessibilidade Total -->
+                    <div class="feature-card">
+                        <i class="fas fa-universal-access feature-icon"></i>
+                        <h3 class="feature-title">Acessibilidade Total</h3>
+                        <p class="feature-description">
+                            Inclui recursos para todos, garantindo inclusão em cada interação.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Demonstração da IA (Chatbot) -->
+        <section id="ai" class="ai-section animate-on-scroll">
+            <div class="container">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h2><i class="fas fa-comments"></i> Demonstração da Wisdom AI</h2>
+                        <p>Interaja e descubra como nossa IA impulsiona seu pensamento crítico.</p>
+                    </div>
+                    <!-- Área de exibição das mensagens do chat -->
+                    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+                        <div class="message ai-message">
+                            <div class="message-header"><i class="fas fa-robot"></i> Wisdom AI</div>
+                            <div class="message-content">
+                                Olá! Estou aqui para guiá-lo com insights e reflexões. Pergunte algo ou me desafie!
+                            </div>
+                            <div class="message-timestamp">09:07 - 26/06/2025</div>
+                        </div>
+                    </div>
+                    <!-- Indicador de carregamento do chatbot -->
+                    <div class="loading" id="loading" role="alert">
+                        <div class="loading-dots">
+                            <span>Wisdom está pensando</span>
+                            <div class="loading-dot"></div>
+                            <div class="loading-dot"></div>
+                            <div class="loading-dot"></div>
+                        </div>
+                    </div>
+                    <!-- Contêiner de entrada de texto e botões do chat -->
+                    <div class="input-container">
+                        <input type="text" class="chat-input" id="chatInput"
+                               placeholder="Digite sua pergunta ou desafio..."
+                               aria-label="Digite sua pergunta" aria-required="true">
+                        <button class="send-button" onclick="sendMessage()" aria-label="Enviar mensagem">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar
+                        </button>
+                        <button class="voice-button" id="voiceButton" aria-label="Usar comando de voz">
+                            <i class="fas fa-microphone"></i>
+                            Voz
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Pacotes/Soluções -->
+        <section id="packages" class="section section-white animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title">Nossas Soluções</h2>
+                <p class="section-subtitle">
+                    Escolha o plano que melhor atende às necessidades da sua organização.
+                </p>
+                <div class="packages-grid">
+                    <!-- Card do Plano Starter -->
+                    <div class="package-card">
+                        <i class="fas fa-rocket package-icon"></i>
+                        <h3 class="package-title">Starter</h3>
+                        <p class="package-description">Ideal para equipes pequenas começando com IA.</p>
+                        <ul class="package-features">
+                            <li>Acesso básico à Wisdom AI</li>
+                            <li>Suporte por e-mail</li>
+                            <li>5 análises/mês</li>
+                            <li>Relatórios iniciais</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                    <!-- Card do Plano Profissional -->
+                    <div class="package-card">
+                        <i class="fas fa-cogs package-icon"></i>
+                        <h3 class="package-title">Profissional</h3>
+                        <p class="package-description">Perfeito para empresas com demandas avançadas.</p>
+                        <ul class="package-features">
+                            <li>Acesso completo à Wisdom AI</li>
+                            <li>Suporte 24/7</li>
+                            <li>20 análises/mês</li>
+                            <li>Integração com ERP</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                    <!-- Card do Plano Enterprise -->
+                    <div class="package-card">
+                        <i class="fas fa-crown package-icon"></i>
+                        <h3 class="package-title">Enterprise</h3>
+                        <p class="package-description">Solução premium para grandes organizações.</p>
+                        <ul class="package-features">
+                            <li>Acesso ilimitado</li>
+                            <li>Suporte dedicado</li>
+                            <li>Análises ilimitadas</li>
+                            <li>Integração avançada</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato: Formulário de contato -->
+        <section id="contact" class="contact-section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title">Fale Conosco</h2>
+                <p class="section-subtitle">Transforme sua organização com a Wisdom AI. Entre em contato!</p>
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <!-- Grupo de formulário para o campo Nome -->
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required autocomplete="name" aria-label="Seu nome">
+                            <span class="form-error" id="nameError">Por favor, insira seu nome completo.</span>
+                            <span class="field-confirmation-message" id="nameConfirmationMessage">Nome válido!</span>
+                        </div>
+                        <!-- Grupo de formulário para o campo Empresa -->
+                        <div class="form-group">
+                            <label for="company">Empresa</label>
+                            <input type="text" id="company" name="company" autocomplete="organization" aria-label="Nome da empresa">
+                            <span class="form-error" id="companyError">Por favor, insira o nome da empresa.</span>
+                            <span class="field-confirmation-message" id="companyConfirmationMessage">Empresa válida!</span>
+                        </div>
+                        <!-- Grupo de formulário para o campo E-mail -->
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required autocomplete="email" aria-label="Seu e-mail">
+                            <span class="form-error" id="emailError">Por favor, insira um e-mail válido.</span>
+                            <span class="field-confirmation-message" id="emailConfirmationMessage">E-mail válido!</span>
+                        </div>
+                        <!-- Grupo de formulário para o campo Telefone -->
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" autocomplete="tel" aria-label="Seu telefone">
+                            <span class="form-error" id="phoneError">Por favor, insira um telefone válido (10-11 dígitos).</span>
+                            <span class="field-confirmation-message" id="phoneConfirmationMessage">Telefone válido!</span>
+                        </div>
+                        <!-- Grupo de formulário para o campo Método de Contato Preferido -->
+                        <div class="form-group">
+                            <label for="contactMethod">Método de Contato Preferido</label>
+                            <select id="contactMethod" name="contactMethod" required aria-label="Método de contato">
+                                <option value="">Selecione uma opção</option>
+                                <option value="email">E-mail</option>
+                                <option value="phone">Telefone</option>
+                                <option value="both">Ambos</option>
+                            </select>
+                            <span class="form-error" id="contactMethodError">Por favor, selecione um método de contato.</span>
+                            <span class="field-confirmation-message" id="contactMethodConfirmationMessage">Método de contato selecionado!</span>
+                        </div>
+                        <!-- Grupo de formulário para o campo Mensagem -->
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" required aria-label="Sua mensagem"></textarea>
+                            <span class="form-error" id="messageError">Por favor, insira uma mensagem com pelo menos 10 caracteres.</span>
+                            <span class="field-confirmation-message" id="messageConfirmationMessage">Mensagem válida!</span>
+                        </div>
+                        <!-- Grupo de formulário para o campo Verificação (CAPTCHA) -->
+                        <div class="form-group captcha-container">
+                            <label for="captcha">Verificação</label>
+                            <input type="text" id="captcha" name="captcha" class="captcha-input" required aria-label="Código de verificação">
+                            <span class="captcha-text" id="captchaText">Digite "WISDOM"</span>
+                            <span class="form-error" id="captchaError">Por favor, insira o código correto.</span>
+                            <span class="field-confirmation-message" id="captchaConfirmationMessage">Código correto!</span>
+                        </div>
+                        <!-- Ações do formulário: Botões de Enviar e Limpar -->
+                        <div class="form-actions">
+                            <button type="submit" class="submit-button" id="submitButton" disabled>
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar
+                            </button>
+                            <button type="button" class="reset-button" id="resetButton">Limpar</button>
+                        </div>
+                    </form>
+                    <!-- Spinner de carregamento -->
+                    <div class="spinner" id="spinner"></div>
+                    <!-- Modal de sucesso após o envio do formulário -->
+                    <div class="success-modal" id="successModal">
+                        <div class="modal-content">
+                            <h3>Sucesso!</h3>
+                            <p>Sua mensagem foi enviada com sucesso. Entraremos em contato em breve.</p>
+                            <p>Enviado em: <span id="submissionTime"></span></p>
+                            <div class="modal-actions">
+                                <button class="btn btn-primary" id="backButton">Voltar ao Formulário</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Seção "Sobre Nós" no rodapé -->
+                <div class="footer-section">
+                    <h3>Sobre Nós</h3>
+                    <p>Wisdom AI redefine a tomada de decisão com IA ética e estratégica.</p>
+                </div>
+                <!-- Seção "Links Úteis" no rodapé -->
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <p><a href="#home">Início</a></p>
+                    <p><a href="#about">Sobre</a></p>
+                    <p><a href="#ai">Demo</a></p>
+                    <p><a href="#packages">Soluções</a></p>
+                    <p><a href="#contact">Contato</a></p>
+                </div>
+                <!-- Seção "Contato" no rodapé -->
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><a href="mailto:contato@wisdomai.com">contato@wisdomai.com</a></p>
+                    <p><a href="tel:+5511999999999">+55 (11) 99999-9999</a></p>
+                </div>
+            </div>
+            <!-- Direitos autorais no rodapé -->
+            <div class="footer-bottom">
+                <p>© 2025 Wisdom AI. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão de acessibilidade/inclusão (agora no canto inferior direito, flutuante) -->
+    <button class="accessibility-toggle fixed-bottom-right" id="accessibilityToggle" aria-label="Alternar recursos de acessibilidade">
+        <i class="fas fa-ear-listen"></i>
+    </button>
+
+    <!-- Link para o arquivo JavaScript personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
